@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "X54EtpNTwyiI4TBQ7XxyIeLHI1vg3IBfLtr9vz/aVSg=",
+  "Source": "MusicMateAPI",
+  "BasePath": "_content/MusicMateAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
