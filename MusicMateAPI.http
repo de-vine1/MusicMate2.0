@@ -1,0 +1,6 @@
+@MusicMateAPI_HostAddress = http://localhost:5130
+
+GET {{MusicMateAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
