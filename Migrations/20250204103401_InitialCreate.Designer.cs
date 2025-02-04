@@ -12,7 +12,7 @@ using MusicMateAPI.Data;
 namespace MusicMateAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250203112223_InitialCreate")]
+    [Migration("20250204103401_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -44,8 +44,8 @@ namespace MusicMateAPI.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
@@ -107,11 +107,11 @@ namespace MusicMateAPI.Migrations
 
             modelBuilder.Entity("MusicMateAPI.Models.StreamingSession", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("SongId")
                         .HasColumnType("int");
@@ -119,10 +119,10 @@ namespace MusicMateAPI.Migrations
                     b.Property<DateTime>("StartedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.HasIndex("SongId");
 
@@ -133,21 +133,23 @@ namespace MusicMateAPI.Migrations
 
             modelBuilder.Entity("MusicMateAPI.Models.User", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("PasswordHash")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<byte[]>("PasswordSalt")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Username")
                         .IsRequired()

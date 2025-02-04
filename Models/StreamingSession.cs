@@ -4,14 +4,14 @@ namespace MusicMateAPI.Models
 {
     public class StreamingSession
     {
-        public int id { get; set; }
+        public int Id { get; set; }  
 
         [ForeignKey("User")]
-        public int UserId { get; set; }
+        public Guid UserId { get; set; }
         public User User { get; set; } = null!;
 
         [ForeignKey("Song")]
-        public int SongId { get; set; }
+        public int SongId { get; set; }  // This should be int to match Song.Id type
         public Song Song { get; set; } = null!;
 
         public DateTime StartedAt { get; set; } = DateTime.UtcNow;
