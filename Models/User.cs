@@ -5,7 +5,7 @@ namespace MusicMateAPI.Models
     public class User
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid(); // Generate a new Guid when a user is created
 
         [Required]
         [MaxLength(50)]
@@ -13,13 +13,15 @@ namespace MusicMateAPI.Models
 
         [Required]
         [MaxLength(50)]
-        public string PasswordHash { get; set; } = string.Empty; //Hashed password for better security
+        public string PasswordHash { get; set; } = string.Empty; // Hashed password for better security
 
         [Required]
-        [MaxLength(50)]
+        [MaxLength(100)]
         public string Email { get; set; } = string.Empty;
 
         [Required]
-        public ICollection<Playlist> Playlists { get; set; } = new List<Playlist>(); // one-to-many relationship
+        public byte[] PasswordSalt { get; set; } // Field to store password salt
+
+        public ICollection<Playlist> Playlists { get; set; } = new List<Playlist>(); // One-to-many relationship
     }
 }
