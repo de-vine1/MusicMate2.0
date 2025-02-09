@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Development\\MusicMate\\MusicMateAPI\\MusicMateAPI.csproj": {}
+    "C:\\Development\\MusicMate2.0\\MusicMateAPI.csproj": {}
   },
   "projects": {
-    "C:\\Development\\MusicMate\\MusicMateAPI\\MusicMateAPI.csproj": {
+    "C:\\Development\\MusicMate2.0\\MusicMateAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Development\\MusicMate\\MusicMateAPI\\MusicMateAPI.csproj",
+        "projectUniqueName": "C:\\Development\\MusicMate2.0\\MusicMateAPI.csproj",
         "projectName": "MusicMateAPI",
-        "projectPath": "C:\\Development\\MusicMate\\MusicMateAPI\\MusicMateAPI.csproj",
+        "projectPath": "C:\\Development\\MusicMate2.0\\MusicMateAPI.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Development\\MusicMate\\MusicMateAPI\\obj\\",
+        "outputPath": "C:\\Development\\MusicMate2.0\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -44,9 +44,21 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "DotNetEnv": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Google": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[9.0.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.OAuth": {
+              "target": "Package",
+              "version": "[2.3.0, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
