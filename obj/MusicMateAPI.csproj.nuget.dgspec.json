@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Development\\MusicMate2.0\\MusicMateAPI.csproj": {}
+    "C:\\Development\\MusicMateAPI\\MusicMateAPI.csproj": {}
   },
   "projects": {
-    "C:\\Development\\MusicMate2.0\\MusicMateAPI.csproj": {
+    "C:\\Development\\MusicMateAPI\\MusicMateAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Development\\MusicMate2.0\\MusicMateAPI.csproj",
+        "projectUniqueName": "C:\\Development\\MusicMateAPI\\MusicMateAPI.csproj",
         "projectName": "MusicMateAPI",
-        "projectPath": "C:\\Development\\MusicMate2.0\\MusicMateAPI.csproj",
+        "projectPath": "C:\\Development\\MusicMateAPI\\MusicMateAPI.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Development\\MusicMate2.0\\obj\\",
+        "outputPath": "C:\\Development\\MusicMateAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config"

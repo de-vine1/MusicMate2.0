@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MusicMateAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef92bc473ef65486b45a0318228293cf04ea4656")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+44bd9ffece87f0e48827cc42ab41d5489f6ba157")]
 [assembly: System.Reflection.AssemblyProductAttribute("MusicMateAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MusicMateAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
