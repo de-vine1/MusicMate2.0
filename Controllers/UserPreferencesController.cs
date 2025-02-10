@@ -20,61 +20,53 @@ namespace MusicMateAPI.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        [Authorize]
-        public async Task<IActionResult> GetUserPreferences()
+        [HttpGet("{userId}")]
+        public async Task<IActionResult> GetUserPreferences(Guid userId)
         {
-            var userId = User
-                .Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)
-                ?.Value;
-            if (userId == null)
-            {
-                return Unauthorized();
-            }
-
-            var preferences = await _context
-                .UserPreferences.Where(p => p.UserId == Guid.Parse(userId))
-                .ToListAsync();
+            var preferences = _context.UserPreferences.Where(up => up.UserId == userId).ToList();
             return Ok(preferences);
         }
 
         [HttpPost]
-        [Authorize]
-        public async Task<IActionResult> UpdateUserPreferences(
-            [FromBody] UserPreferences preferences
-        )
+        public async Task<IActionResult> SetUserPreference(UserPreferences preference)
         {
-            var userId = User
-                .Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)
-                ?.Value;
-            if (userId == null)
-            {
-                return Unauthorized();
-            }
-
-            var userPreferences = await _context.UserPreferences.FirstOrDefaultAsync(p =>
-                p.UserId == Guid.Parse(userId) && p.PreferenceKey == preferences.PreferenceKey
+            var existingPreference = _context.UserPreferences.FirstOrDefault(up =>
+                up.UserId == preference.UserId && up.PreferenceKey == preference.PreferenceKey
             );
 
-            if (userPreferences == null)
+            if (existingPreference != null)
             {
-                userPreferences = new UserPreferences
-                {
-                    Id = Guid.NewGuid(),
-                    UserId = Guid.Parse(userId),
-                    PreferenceKey = preferences.PreferenceKey,
-                    PreferenceValue = preferences.PreferenceValue,
-                };
-                _context.UserPreferences.Add(userPreferences);
+                existingPreference.PreferenceValue = preference.PreferenceValue;
+                _context.UserPreferences.Update(existingPreference);
             }
             else
             {
-                userPreferences.PreferenceValue = preferences.PreferenceValue;
-                _context.UserPreferences.Update(userPreferences);
+                _context.UserPreferences.Add(preference);
             }
 
             await _context.SaveChangesAsync();
-            return Ok(new { Message = "Preferences updated successfully" });
+            return Ok(preference);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateUserPreference(Guid id, UserPreferences preference)
+        {
+            if (id != preference.Id)
+            {
+                return BadRequest();
+            }
+
+            var existingPreference = await _context.UserPreferences.FindAsync(id);
+            if (existingPreference == null)
+            {
+                return NotFound();
+            }
+
+            existingPreference.PreferenceValue = preference.PreferenceValue;
+            _context.UserPreferences.Update(existingPreference);
+            await _context.SaveChangesAsync();
+
+            return Ok(existingPreference);
         }
     }
 }

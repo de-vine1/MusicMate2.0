@@ -22,6 +22,28 @@ namespace MusicMateAPI.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("MusicMateAPI.Models.OfflineSong", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CachedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SongId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SongUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("OfflineSongs", (string)null);
+                });
+
             modelBuilder.Entity("MusicMateAPI.Models.Playlist", b =>
                 {
                     b.Property<int>("Id")
@@ -156,6 +178,28 @@ namespace MusicMateAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("MusicMateAPI.Models.UserPreferences", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("PreferenceKey")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PreferenceValue")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserPreferences");
                 });
 
             modelBuilder.Entity("PlaylistSong", b =>

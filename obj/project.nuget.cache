@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/ACjxrCpZkY=",
+  "dgSpecHash": "7Jf4QHisHVQ=",
   "success": true,
   "projectFilePath": "C:\\Development\\MusicMateAPI\\MusicMateAPI.csproj",
   "expectedPackageFiles": [
@@ -48,6 +48,7 @@
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.codeanalysis.csharp.workspaces\\4.8.0\\microsoft.codeanalysis.csharp.workspaces.4.8.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.codeanalysis.workspaces.common\\4.8.0\\microsoft.codeanalysis.workspaces.common.4.8.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.codeanalysis.workspaces.msbuild\\4.8.0\\microsoft.codeanalysis.workspaces.msbuild.4.8.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.cognitiveservices.speech\\1.42.0\\microsoft.cognitiveservices.speech.1.42.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.6\\microsoft.data.sqlclient.5.1.6.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.1.1\\microsoft.data.sqlclient.sni.runtime.5.1.1.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.1\\microsoft.entityframeworkcore.9.0.1.nupkg.sha512",

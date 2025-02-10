@@ -26,6 +26,8 @@ namespace MusicMateAPI.Services
                 "pause" => "Pausing music",
                 "next" => "Skipping to next track",
                 "previous" => "Going back to previous track",
+                "volume up" => "Increasing volume",
+                "volume down" => "Decreasing volume",
                 _ => "Unknown command",
             };
         }

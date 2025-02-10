@@ -13,6 +13,7 @@ namespace MusicMateAPI.Data
         public DbSet<User> Users { get; set; }
         public DbSet<StreamingSession> StreamingSessions { get; set; }
         public DbSet<UserPreferences> UserPreferences { get; set; }
+        public DbSet<OfflineSong> OfflineSongs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -40,6 +41,9 @@ namespace MusicMateAPI.Data
                 .HasOne(ss => ss.Song)
                 .WithMany()
                 .HasForeignKey(ss => ss.SongId); // Foreign key is int
+
+            // Define the OfflineSong entity
+            modelBuilder.Entity<OfflineSong>().ToTable("OfflineSongs");
         }
     }
 }
